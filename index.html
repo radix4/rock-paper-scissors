@@ -7,12 +7,42 @@
   </head>
   <body>
     <script>
+      // TODO: write a function that plays a single round of Rock Paper Scissors
+      // the function take 2 params playerSelection and computerSelection //
+      // make function case insensitive //
+      // func returns a string that declares the winner of the round
+      // since there are a lot if statements, use switch statement
+      // Paper beats Rock
+      // Scissors beats Paper
+      // Rock beats Scissors
+      function playSingleRound(playerSelection, computerSelection) {
+        playerSelection = playerSelection.toLowerCase()
+        computerSelection = computerSelection.toLowerCase()
+
+        // player wins
+        if (playerSelection === 'paper' && computerSelection === 'rock')
+          return 'You Win! Paper beats Rock'
+        if (playerSelection === 'scissors' && computerSelection === 'paper')
+          return 'You Win! Scissors beats Paper'
+        if (playerSelection === 'rock' && computerSelection === 'scissors')
+          return 'You Win! Rock beats Scissors'
+
+        // computer wins
+        if (computerSelection === 'paper' && playerSelection === 'rock')
+          return 'You Lose! Paper beats Rock'
+        if (computerSelection === 'scissors' && playerSelection === 'paper')
+          return 'You Lose! Scissors beats Paper'
+        if (computerSelection === 'rock' && playerSelection === 'scissors')
+          return 'You Lose! Rock beats Scissors'
+
+        // tie
+        return "It's a tie!"
+      }
+
       // TODO: randomly return 'Rock' 'Paper' or 'Scissors'
       // randomly generate a number between 1 and 3
       // use switch statement
-      // 1 = rock
-      // 2 = paper
-      // 3 = scissors
+      // cases: 1 = rock, 2 = paper, 3 = cissors
       // return a string
       function computerPlay() {
         switch (getRandomInt(1, 3)) {
@@ -30,7 +60,7 @@
         }
       }
 
-      //The max & min are inclusive
+      // the max & min are inclusive
       function getRandomInt(min, max) {
         min = Math.ceil(min)
         max = Math.floor(max)
