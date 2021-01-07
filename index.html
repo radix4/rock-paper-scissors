@@ -7,14 +7,30 @@
   </head>
   <body>
     <script>
+      // TODO: write a function that plays 5 round game
+      // that keeps score and reports win/lose at the end
+      function game() {
+        let playerWin = 0
+        let computerWin = 0
+
+        for (let i = 0; i < 5; i++) {
+          const playerInput = prompt('Rock, paper, or scissors?')
+          const round = playSingleRound(playerInput, computerPlay())
+
+          if (round.indexOf('Win') !== -1) playerWin++
+          else if (round.indexOf('Lose') !== -1) computerWin++
+
+          console.log(round)
+        }
+
+        console.log(`Player score: ${playerWin}`)
+        console.log(`Computer score: ${computerWin}`)
+        if (playerWin > computerWin) console.log('You Win!')
+        else if (playerWin < computerWin) console.log('You Lose!')
+        else console.log('Tie!')
+      }
+
       // TODO: write a function that plays a single round of Rock Paper Scissors
-      // the function take 2 params playerSelection and computerSelection //
-      // make function case insensitive //
-      // func returns a string that declares the winner of the round
-      // since there are a lot if statements, use switch statement
-      // Paper beats Rock
-      // Scissors beats Paper
-      // Rock beats Scissors
       function playSingleRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase()
         computerSelection = computerSelection.toLowerCase()
@@ -40,10 +56,6 @@
       }
 
       // TODO: randomly return 'Rock' 'Paper' or 'Scissors'
-      // randomly generate a number between 1 and 3
-      // use switch statement
-      // cases: 1 = rock, 2 = paper, 3 = cissors
-      // return a string
       function computerPlay() {
         switch (getRandomInt(1, 3)) {
           case 1:
