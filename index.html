@@ -36,20 +36,20 @@
         computerSelection = computerSelection.toLowerCase()
 
         // player wins
-        if (playerSelection === 'paper' && computerSelection === 'rock')
-          return 'You Win! Paper beats Rock'
-        if (playerSelection === 'scissors' && computerSelection === 'paper')
-          return 'You Win! Scissors beats Paper'
-        if (playerSelection === 'rock' && computerSelection === 'scissors')
-          return 'You Win! Rock beats Scissors'
+        if (
+          (playerSelection === 'paper' && computerSelection === 'rock') ||
+          (playerSelection === 'scissors' && computerSelection === 'paper') ||
+          (playerSelection === 'rock' && computerSelection === 'scissors')
+        )
+          return `You Win! ${playerSelection} beats ${computerSelection}`
 
         // computer wins
-        if (computerSelection === 'paper' && playerSelection === 'rock')
-          return 'You Lose! Paper beats Rock'
-        if (computerSelection === 'scissors' && playerSelection === 'paper')
-          return 'You Lose! Scissors beats Paper'
-        if (computerSelection === 'rock' && playerSelection === 'scissors')
-          return 'You Lose! Rock beats Scissors'
+        if (
+          (computerSelection === 'paper' && playerSelection === 'rock') ||
+          (computerSelection === 'scissors' && playerSelection === 'paper') ||
+          (computerSelection === 'rock' && playerSelection === 'scissors')
+        )
+          return `You Win! ${computerSelection} beats ${playerSelection}`
 
         // tie
         return "It's a tie!"
