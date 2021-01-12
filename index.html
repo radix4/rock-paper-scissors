@@ -4,10 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css" />
 
     <!-- image by https://www.deviantart.com/naolito/art/Rock-Paper-Scissors-Bully-846437549 -->
   </head>
   <body>
+    <div class="container">
+      <div class="top-half"></div>
+      <div class="bottom-half">
+        <div class="header">
+          <h3>Try your luck!</h3>
+        </div>
+        <div class="score-board">
+          <div class="you-score">You: 0 Points</div>
+          <div class="computer-score">Computer: 5 Points</div>
+        </div>
+        <div class="choice-display">
+          <div class="player-selection-display">Rock</div>
+          <div class="computer-selection-display">Paper</div>
+          <div class="verticle-line"></div>
+        </div>
+        <div class="btn-selection">
+          <button class="btn-rock">Rock</button>
+          <button class="btn-paper">Paper</button>
+          <button class="btn-scissors">Scissors</button>
+        </div>
+      </div>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
