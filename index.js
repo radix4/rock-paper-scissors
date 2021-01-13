@@ -1,3 +1,44 @@
+let playerWin = 0
+let computerWin = 0
+
+// TODO: Need an event listener
+// When a button is clicked, do something
+const btnRock = document.querySelector('#btn-rock')
+btnRock.addEventListener('click', () => {
+  const playerChoice = 'rock'
+  const computerChoice = computerPlay()
+  const playerImage = `./${playerChoice}.png`
+  const computerImage = `./${computerChoice}.png`
+
+  playSingleRound(playerChoice, computerChoice)
+  document.getElementById('player-image').src = playerImage
+  document.getElementById('computer-image').src = computerImage
+})
+
+const btnPaper = document.querySelector('#btn-paper')
+btnPaper.addEventListener('click', () => {
+  const playerChoice = 'paper'
+  const computerChoice = computerPlay()
+  const playerImage = `./${playerChoice}.png`
+  const computerImage = `./${computerChoice}.png`
+
+  playSingleRound(playerChoice, computerChoice)
+  document.getElementById('player-image').src = playerImage
+  document.getElementById('computer-image').src = computerImage
+})
+
+const btnScissors = document.querySelector('#btn-scissors')
+btnScissors.addEventListener('click', () => {
+  const playerChoice = 'scissors'
+  const computerChoice = computerPlay()
+  const playerImage = `./${playerChoice}.png`
+  const computerImage = `./${computerChoice}.png`
+
+  playSingleRound(playerChoice, computerChoice)
+  document.getElementById('player-image').src = playerImage
+  document.getElementById('computer-image').src = computerImage
+})
+
 // TODO: write a function that plays 5 round game
 // that keeps score and reports win/lose at the end
 function game() {
@@ -31,32 +72,43 @@ function playSingleRound(playerSelection, computerSelection) {
     (playerSelection === 'paper' && computerSelection === 'rock') ||
     (playerSelection === 'scissors' && computerSelection === 'paper') ||
     (playerSelection === 'rock' && computerSelection === 'scissors')
-  )
+  ) {
+    playerWin++
+    document.getElementById(
+      'player-score'
+    ).textContent = `You: ${playerWin} points`
     return `You Win! ${playerSelection} beats ${computerSelection}`
+  }
 
   // computer wins
   if (
     (computerSelection === 'paper' && playerSelection === 'rock') ||
     (computerSelection === 'scissors' && playerSelection === 'paper') ||
     (computerSelection === 'rock' && playerSelection === 'scissors')
-  )
+  ) {
+    computerWin++
+    document.getElementById(
+      'comp-score'
+    ).textContent = `You: ${computerWin} points`
     return `You Win! ${computerSelection} beats ${playerSelection}`
+  }
 
   // tie
   return "It's a tie!"
 }
 
 // TODO: randomly return 'Rock' 'Paper' or 'Scissors'
+// Refactor: arrays might look cleaner
 function computerPlay() {
   switch (getRandomInt(1, 3)) {
     case 1:
-      return 'Rock'
+      return 'rock'
       break
     case 2:
-      return 'Paper'
+      return 'paper'
       break
     case 3:
-      return 'Scissors'
+      return 'scissors'
       break
     default:
       return 'something terribly wrong happened'

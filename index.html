@@ -17,21 +17,23 @@
           <h2>Try your luck!</h2>
         </div>
         <div class="score-board">
-          <div class="you-score"><p>You: 0 Points</p></div>
-          <div class="computer-score"><p>Computer: 5 Points</p></div>
+          <div class="you-score"><p id="player-score">You: 0 Points</p></div>
+          <div class="computer-score">
+            <p id="comp-score">Computer: 0 Points</p>
+          </div>
         </div>
         <div class="choice-display">
           <div class="player-selection-display">
-            <img class src="./rock.png" alt="" />
+            <img id="player-image" src="./rock.png" alt="" />
           </div>
           <div class="computer-selection-display">
-            <img src="./scissors.png" alt="" />
+            <img id="computer-image" src="./paper.png" alt="" />
           </div>
         </div>
         <div class="btn-selection">
-          <button class="btn-rock">Rock</button>
-          <button class="btn-paper">Paper</button>
-          <button class="btn-scissors">Scissors</button>
+          <button id="btn-rock">Rock</button>
+          <button id="btn-paper">Paper</button>
+          <button id="btn-scissors">Scissors</button>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background-image: url('./background.png');
+  /* background-image: url('./background.png'); */
   background-repeat: no-repeat;
   /* fixed -- make sure the entire element is always covered */
   background-attachment: fixed;
@@ -84,12 +84,12 @@ img {
   justify-content: center;
 }
 
-.btn-rock {
+#btn-rock {
   position: relative;
   right: 10px;
 }
 
-.btn-scissors {
+#btn-scissors {
   position: relative;
   left: 10px;
 }
