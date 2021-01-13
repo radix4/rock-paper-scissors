@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  background-color: darkgray;
 }
 
 body {
@@ -14,6 +15,12 @@ body {
   background-position: center;
 }
 
+img {
+  background: transparent;
+  height: auto;
+  width: 100px;
+}
+
 .container {
   min-height: 100%;
   display: flex;
@@ -21,7 +28,7 @@ body {
 }
 
 .top-half {
-  flex: 2;
+  flex: 4;
 }
 
 .bottom-half {
@@ -29,7 +36,9 @@ body {
 }
 
 .header {
+  position: relative;
   text-align: center;
+  top: 25px;
 }
 
 .score-board,
@@ -47,29 +56,25 @@ body {
   position: relative;
 }
 
-.you-score {
-  left: 100px;
-}
-
-.computer-score {
-  right: 100px;
-}
-
-.player-selection-display {
-  left: 100px;
-}
-
+.computer-score,
 .computer-selection-display {
-  right: 100px;
+  right: 15%;
+  bottom: 10px;
+}
+
+.you-score,
+.player-selection-display {
+  left: 15%;
+  bottom: 10px;
 }
 
 .verticle-line {
   border-left: 3px solid cadetblue;
-  height: 140px;
+  height: 120px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
-  top: 65%;
+  top: 66%;
 }
 
 .btn-selection {
@@ -87,4 +92,18 @@ body {
 .btn-scissors {
   position: relative;
   left: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
 }
