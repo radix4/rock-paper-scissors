@@ -77,6 +77,10 @@ function playSingleRound(playerSelection, computerSelection) {
     document.getElementById(
       'player-score'
     ).textContent = `You: ${playerWin} points`
+    if (playerWin === 5) {
+      document.getElementById('header-tag').textContent = 'Yay! You Win!'
+      terminateGame()
+    }
     return `You Win! ${playerSelection} beats ${computerSelection}`
   }
 
@@ -90,11 +94,33 @@ function playSingleRound(playerSelection, computerSelection) {
     document.getElementById(
       'comp-score'
     ).textContent = `You: ${computerWin} points`
+    if (computerWin === 5) {
+      document.getElementById('header-tag').textContent = 'Oh No! You Lose!'
+      terminateGame()
+    }
     return `You Win! ${computerSelection} beats ${playerSelection}`
   }
 
   // tie
   return "It's a tie!"
+}
+
+// TODO: add a feature when player/computer wins, something happens
+function terminateGame() {
+  const btnRock = document.getElementById('btn-rock')
+  const btnPaper = document.getElementById('btn-paper')
+  const btnScissors = document.getElementById('btn-scissors')
+  btnRock.remove()
+  btnPaper.remove()
+  btnScissors.remove()
+
+  const container = document.querySelector('.btn-selection')
+  const btnPlayAgain = document.createElement('button')
+  btnPlayAgain.textContent = 'Play Again'
+
+  container.appendChild(btnPlayAgain)
+
+  btnPlayAgain.onclick = () => window.location.reload()
 }
 
 // TODO: randomly return 'Rock' 'Paper' or 'Scissors'

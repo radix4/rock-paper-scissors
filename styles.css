@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  /* background-image: url('./background.png'); */
+  background-image: url('./background.png');
   background-repeat: no-repeat;
   /* fixed -- make sure the entire element is always covered */
   background-attachment: fixed;
