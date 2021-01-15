@@ -7,8 +7,8 @@ const btnRock = document.querySelector('#btn-rock')
 btnRock.addEventListener('click', () => {
   const playerChoice = 'rock'
   const computerChoice = computerPlay()
-  const playerImage = `./${playerChoice}.png`
-  const computerImage = `./${computerChoice}.png`
+  const playerImage = `./images/${playerChoice}.png`
+  const computerImage = `./images/${computerChoice}.png`
 
   playSingleRound(playerChoice, computerChoice)
   document.getElementById('player-image').src = playerImage
@@ -19,8 +19,8 @@ const btnPaper = document.querySelector('#btn-paper')
 btnPaper.addEventListener('click', () => {
   const playerChoice = 'paper'
   const computerChoice = computerPlay()
-  const playerImage = `./${playerChoice}.png`
-  const computerImage = `./${computerChoice}.png`
+  const playerImage = `./images/${playerChoice}.png`
+  const computerImage = `./images/${computerChoice}.png`
 
   playSingleRound(playerChoice, computerChoice)
   document.getElementById('player-image').src = playerImage
@@ -31,8 +31,8 @@ const btnScissors = document.querySelector('#btn-scissors')
 btnScissors.addEventListener('click', () => {
   const playerChoice = 'scissors'
   const computerChoice = computerPlay()
-  const playerImage = `./${playerChoice}.png`
-  const computerImage = `./${computerChoice}.png`
+  const playerImage = `./images/${playerChoice}.png`
+  const computerImage = `./images/${computerChoice}.png`
 
   playSingleRound(playerChoice, computerChoice)
   document.getElementById('player-image').src = playerImage
